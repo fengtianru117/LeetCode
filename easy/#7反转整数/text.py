@@ -40,9 +40,7 @@ class Solution:
         """
         if x == 0:
             return 0
-        if x < -2147483648:
-            return 0
-        if x > 2147483647:  # 整数不溢出的条件
+        if x < -2147483648 or x > 2147483647:
             return 0
 
         p = abs(x)
@@ -54,9 +52,7 @@ class Solution:
         for i in range(length):
             if i >= mid:
                 d=int(''.join(map(str, l)))
-                if d < -2147483648:
-                    return 0
-                if d > 2147483647:  # 整数不溢出的条件
+                if d < -2147483648 or d > 2147483647:
                     return 0
                 if x < 0:
                     return -d
